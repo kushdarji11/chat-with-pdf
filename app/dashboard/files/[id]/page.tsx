@@ -3,9 +3,9 @@ import PdfView from "@/components/PdfView";
 import { adminDb } from "@/firebaseAdmin";
 import {auth} from "@clerk/nextjs/server";
 
-async function ChatToFilePage({params: {id},} : {params: {id:string;};}) 
+async function ChatToFilePage({ params }: { params: Promise<{ id: string }> }) 
 {
-    // const {id} = await params;
+  const { id } = await params;
     auth.protect();
     const {userId} = await auth();
 
