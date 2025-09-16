@@ -1,60 +1,62 @@
 import Image from "next/image";
 import {
-  Brain,
+  BrainCogIcon,
+  EyeIcon,
+  GlobeIcon,
   Image as ImageIcon,
-  MessageSquare,
-  Sparkles,
-  Video,
+  MonitorSmartphoneIcon,
+  ServerCogIcon,
+  ZapIcon,
 } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import Link from "next/link";
 
 const features = [
   {
-    title: "AI Analysis",
+    title: "Store your PDF Documents",
     description:
-      "Get deep insights into your video content with our advanced AI analysis. Understand viewer engagement and content quality.",
-    icon: Brain,
+      "Keep all your important PDF files securely stored and easily accessible anytime, anywhere.",
+    icon: GlobeIcon,
     iconBg: "bg-blue-100",
     iconColor: "text-blue-600",
   },
   {
-    title: "Smart Transcription",
+    title: "Blazing Fast Responses",
     description:
-      "Get accurate transcriptions of your videos. Perfect for creating subtitles, blog posts, or repurposing content.",
-    icon: MessageSquare,
+      "Experience lightning-fast answers to your queries, ensuring you get the information you need instantly.",
+    icon: ZapIcon,
     iconBg: "bg-green-100",
     iconColor: "text-green-600",
   },
   {
-    title: "Thumbnail Generation",
+    title: "Chat Memorisation",
     description:
-      "Generate eye-catching thumbnails using AI. Boost your click-through rates with compelling visuals.",
-    icon: ImageIcon,
+      "Our intelligent chatbot remembers previous interacions, providing a seamless and personalized experience.",
+    icon: BrainCogIcon,
     iconBg: "bg-purple-100",
     iconColor: "text-purple-600",
   },
   {
-    title: "Title Generation",
+    title: "Interactive PDF Viewer",
     description:
-      "Create attention-grabbing, SEO-optimized titles for your videos using AI. Maximize views with titles that resonate with your audience.",
-    icon: MessageSquare,
+      "Engage with your PDFs like never before using our intuitive and interactive viewer.",
+    icon: EyeIcon,
     iconBg: "bg-yellow-100",
     iconColor: "text-yellow-600",
   },
   {
-    title: "Shot Script",
+    title: "Cloud Backup",
     description:
-      "Get detailed, step-by-step instructions to recreate viral videos. Learn shooting techniques, angles, and editing tips from successful content.",
-    icon: Video,
+      "Rest assured knowing your documents are safely backed up on the cloud, protected from loss or damage.",
+    icon: ServerCogIcon,
     iconBg: "bg-red-100",
     iconColor: "text-red-600",
   },
   {
-    title: "Discuss with Your AI Agent",
+    title: "Responseive Accross Devices",
     description:
-      "Engage in deep conversations about your content strategy, brainstorm ideas, and unlock new creative possibilities with your AI agent companion.",
-    icon: Sparkles,
+      "Access and chat wit your PDFs seamlessly on any device, whether its your desktop, tablet, or smartphone.",
+    icon: MonitorSmartphoneIcon,
     iconBg: "bg-orange-100",
     iconColor: "text-orange-600",
   },

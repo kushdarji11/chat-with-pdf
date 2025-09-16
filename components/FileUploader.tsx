@@ -1,12 +1,15 @@
 "use client";
+import useSubscription from '@/hooks/useSubscription';
 import useUpload, { StatusText } from '@/hooks/useUpload';
 import { CheckCircleIcon, CircleArrowDown, HammerIcon, RocketIcon, SaveIcon } from 'lucide-react';
 import { useRouter } from 'next/navigation';
 import { JSX, useCallback, useEffect } from 'react';
 import {useDropzone} from 'react-dropzone'
+import { toast } from 'sonner';
 
 function FileUploader() {
     const {progress, status, fileId, handleUpload} = useUpload();
+    const {isOverFileLimit, filesLoading} = useSubscription();
     const router = useRouter();
 
     useEffect(() => {
@@ -20,12 +23,19 @@ function FileUploader() {
     // Do something with the files
     const file = acceptedFiles[0];
     if(file){
-        await handleUpload(file)
+        if(!isOverFileLimit && !filesLoading){
+            await handleUpload(file)
+        }
+        else{
+            toast.error("Error", {
+                    description: "You have reached the maximum numberof files allowed for your account. Please upgrade to add more documents.",
+                })
+        }
     }else{
         //do nothing
         //toast
     }    
-}, [handleUpload]);
+}, [handleUpload , isOverFileLimit, filesLoading]);
 
   const statusIcons: {
     [key in StatusText]: JSX.Element;
